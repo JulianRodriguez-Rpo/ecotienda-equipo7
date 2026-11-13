@@ -48,6 +48,13 @@
 
     <!-- main: el contenido principal -->
     <main>
+        <!-- BUSCADOR: un campo de texto. El evento input lo escucha js/tienda.js
+             form-control = estilo de Bootstrap para campos de formulario -->
+        <div class="mb-3">
+            <label for="buscador" class="form-label">Buscar por nombre</label>
+            <input type="search" id="buscador" class="form-control" placeholder="Ej: LED, nevera, solar">
+        </div>
+
         <!-- div class="filtros": la caja con los botones para filtrar por categoria -->
         <div class="filtros">
             <!-- button: un BOTON. data-categoria: un dato PROPIO guardado en el boton
@@ -60,6 +67,11 @@
             <button class="filtro" data-categoria="solar">Energía solar</button>
         <!-- Cierra la caja de los filtros -->
         </div>
+
+        <!-- Aviso que JavaScript muestra cuando ningun producto coincide -->
+        <p id="sin-resultados" class="text-muted" hidden>
+            No encontramos productos con ese nombre en esta categoría. Prueba con otra palabra.
+        </p>
 
         <!-- div class="catalogo": dos columnas: los productos a la izquierda y el carrito a la derecha -->
         <div class="catalogo">
