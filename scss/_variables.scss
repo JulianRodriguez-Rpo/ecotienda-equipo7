@@ -1,26 +1,31 @@
 // =============================================================
-// PARCIAL de Sass: solo variables y mixins.
-// El guion bajo (_variables.scss) le dice a Sass que este archivo
-// no se compila solo: se usa desde estilos.scss con @use.
+// PARCIAL de Sass: variables, medidas y mixin de VatioVerde.
+// El guion bajo (_variables.scss) indica que este archivo no se compila solo:
+// se trae desde estilos.scss con @use.
 // =============================================================
 
-// --- Variables de Sass: empiezan con $ y solo existen al compilar ---
-$color-principal: #1B5E20;   // verde oscuro: encabezado y titulos
-$color-acento: #F9A825;      // amarillo: precios y detalles
-$color-fondo: #F4F7F2;       // gris verdoso muy claro: fondo
-$color-texto: #1F2933;       // casi negro: el texto
-$color-suave: #DDEBDD;       // verde claro: bordes y filas
-$radio: 12px;                // esquinas redondeadas
-$sombra: 0 4px 12px rgba(0, 0, 0, 0.12);   // sombra suave: abajo 4px, difuminada 12px, negro al 12 %
+// --- PALETA: variables de Sass. Solo existen al compilar ---
+$color-principal: #1B5E20;    // verde oscuro: encabezado y titulos
+$color-secundario: #2E7D32;   // verde medio: cifras de ahorro
+$color-acento: #F9A825;       // amarillo: precios, bordes y detalles
+$color-fondo: #F4F7F2;        // gris verdoso muy claro: fondo de la pagina
+$color-texto: #1F2933;        // casi negro: el texto
+$color-suave: #DDEBDD;        // verde claro: bordes finos y fondos suaves
+$color-claro: #E3F2E3;        // verde muy claro: texto sobre el verde oscuro
+$color-blanco: #FFFFFF;       // blanco: tarjetas y fondos de caja
 
-// Anchos de pantalla para el diseno responsivo
-$tablet: 992px;              // hasta este ancho se considera tablet
-$celular: 576px;             // hasta este ancho se considera celular
+// --- MEDIDAS ---
+$radio: 12px;                             // esquinas redondeadas
+$sombra: 0 4px 12px rgba(0, 0, 0, 0.12);  // sombra suave: 4 px abajo, 12 px de difuminado
 
-// --- Mixin: un grupo de propiedades con nombre, que se reutiliza con @include ---
-// $relleno tiene un valor por defecto (16px) si no se le pasa otro
+// --- ANCHOS DE PANTALLA para las media queries ---
+$tablet: 992px;     // hasta este ancho: tablet
+$celular: 576px;    // hasta este ancho: celular
+
+// --- MIXIN: un grupo de propiedades reutilizable con @include ---
+// Relleno, esquinas y sombra juntos. Si no se pasa relleno, vale 16px.
 @mixin caja($relleno: 16px) {
-    padding: $relleno;       // el relleno que se le pase (o 16px)
-    border-radius: $radio;   // esquinas redondeadas
-    box-shadow: $sombra;     // sombra
+  padding: $relleno;
+  border-radius: $radio;
+  box-shadow: $sombra;
 }
